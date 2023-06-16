@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block body %}
+    {% for musician in music_list %}
+        <ul>
+            <li>
+                {{ musician.id}} || {{ musician.first_name}}
+            </li>
+        </ul>
+    {% endfor %}
+    {% endblock %}
+</body>
+</html>

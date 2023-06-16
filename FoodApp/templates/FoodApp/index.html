@@ -1,0 +1,49 @@
+{% extends 'FoodApp/base.html' %}
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'FoodApp\style.css' %}">
+    
+</head>
+<body>
+    
+    {% block body %}
+    {% for item in item_list %}
+
+        <div class="row">
+            <div class="col-md-3 offset-md-2">
+                <img class="card" height="100px" src="{{ item.item_image}}">
+            </div>
+            <div class="col-md-4">
+                
+            </div>
+            <div class="col-md-2">
+                <h3>{{ item.item_name}}</h3>
+                <h4>{{ item.item_desc}}</h4>
+                <h6>{{ item.item_price}}</h4>
+
+                <a href="{% url 'detailview' item.id %}" class="btn btn-success">Details</a>
+            </div>
+        </div>
+
+    {% endfor %}
+    {% endblock %}
+    this is old code
+    
+    
+<ul>
+    <li>
+        
+        <a href="{% url 'detailview' item.id %}" > {{ item.id }} -- {{ item.item_name}}</a>
+        
+        
+    </li>
+</ul>
+
+</body>
+</html>
